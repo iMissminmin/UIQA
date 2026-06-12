@@ -1,6 +1,13 @@
 # Delivery Score and Severity
 
-Use scoring when the review covers a complete screen, workflow, release candidate, or design-to-code delivery. For narrow questions, use severity only.
+Use scoring when the review covers a complete screen, workflow, release candidate, or design-to-code delivery with enough evidence for a broad quality judgment. For narrow questions, use severity only.
+
+When evidence is incomplete:
+
+- Screenshot-only review: use severity and risk by default. Add a total score only when the user asks for it, and label it provisional.
+- Code-only or patch-only review: score implementation risk only when enough structure is visible. Do not score visual fidelity or interaction quality without visual or browser evidence.
+- Static design export: score design delivery quality, not implemented behavior.
+- Missing responsive or state evidence: state the gap and apply the score caps below.
 
 ## Severity
 
@@ -47,6 +54,9 @@ Use ranges, not exact math, when evidence is incomplete:
 - Major component states unverified: maximum `85`.
 - No target design available in a design-to-code review: maximum `80` for fidelity, but delivery quality may still be scored.
 - Screenshot-only review without interaction evidence: maximum `88`.
+- Code-only review without visual/browser evidence: maximum `82`.
+- Reviews with too many unverified states: do not score by default; if a score is required, maximum `80`.
+- Provisional score with multiple major evidence gaps: maximum `80`.
 
 ## Risk Level
 

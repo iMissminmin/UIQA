@@ -9,8 +9,10 @@
 - Conclusion: Pass / Conditional Pass / Fail
 - Delivery score:
 - UX risk: Low / Medium / High / Critical
+- Evidence level: Full browser review / Prototype-static review / Screenshot-only review / Code-only review / Mixed evidence
 - Checked evidence:
 - Unverified areas:
+- Score confidence: Final / Provisional / Not scored
 
 ## Business Scene Check
 

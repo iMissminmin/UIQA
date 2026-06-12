@@ -4,15 +4,43 @@ Use this file as the default inspection checklist for UI delivery reviews.
 
 ## Review Order
 
-1. Responsive
-2. Auto Layout / CSS layout structure
-3. Spacing
-4. Typography
-5. Shadow / border / surface
-6. Components and states
-7. Business UX
+1. Business scene and primary task
+2. Responsive
+3. Auto Layout / CSS layout structure
+4. Spacing
+5. Typography
+6. Shadow / border / surface
+7. Components and states
+8. Trust, accessibility, and Business UX
 
-## 1. Responsive
+If the business scene is wrong, the core workflow is missing, or the primary task cannot be completed, mark P0 before visual polish.
+
+## 1. Business Scene and Primary Task
+
+Check:
+
+- The page matches the intended user role, permission, tenant, company, project, period, selected object, and data state.
+- The primary task can be completed from the available UI without hidden assumptions.
+- The first meaningful object is the business object being acted on, such as customer, invoice, voucher, contract, task, risk, order, or record.
+- Current scope, filters, status, owner, and time range are visible when they affect decisions.
+- High-risk actions include confirmation, prevention, recovery, and audit trace when required.
+- AI, risk, or automation output includes reason, evidence, source, confidence, or review path when it influences decisions.
+
+Common issues:
+
+- Page title says one scene but content shows another.
+- Tenant, company, date range, selected object, or permission state is missing or wrong.
+- Primary action is absent, disabled without reason, hidden below unrelated content, or detached from the decision point.
+- Alerts, exceptions, or AI recommendations have no reason or next action.
+- Empty, error, failed sync, or permission-limited states do not provide recovery.
+
+Escalate:
+
+- P0: wrong business scene, missing core workflow, impossible task completion, critical data mismatch, or unsafe high-risk action.
+- P1: primary action unclear, important state missing, weak recovery path, or decision support lacks evidence.
+- P2: local copy, grouping, or efficiency issue that does not materially block completion.
+
+## 2. Responsive
 
 Check:
 
@@ -37,7 +65,7 @@ Escalate:
 - P1: important content or action is hidden, clipped, or requires awkward workaround.
 - P2: local wrapping, spacing, or polish issue that does not block completion.
 
-## 2. Auto Layout / CSS Layout
+## 3. Auto Layout / CSS Layout
 
 Check:
 
@@ -60,7 +88,7 @@ Escalate:
 - P1: fragile layout breaks under realistic content, resizing, or state changes.
 - P2: inconsistent alignment or local grouping issue.
 
-## 3. Spacing
+## 4. Spacing
 
 Check:
 
@@ -90,7 +118,7 @@ Escalate:
 - P1: spacing weakens hierarchy or causes misoperation.
 - P2: inconsistent but non-blocking spacing.
 
-## 4. Typography
+## 5. Typography
 
 Check:
 
@@ -116,7 +144,7 @@ Escalate:
 - P1: hierarchy hides the primary task, key risk, or decision.
 - P2: inconsistent local sizing, weight, line height, or truncation.
 
-## 5. Shadow / Border / Surface
+## 6. Shadow / Border / Surface
 
 Check:
 
@@ -138,7 +166,7 @@ Escalate:
 - P1: visual hierarchy misleads task priority or hides risk state.
 - P2: shadow, border, contrast, or surface polish issue.
 
-## 6. Components and States
+## 7. Components and States
 
 Check:
 
@@ -157,7 +185,7 @@ Escalate:
 - P1: important state is missing or a risky action lacks confirmation.
 - P2: local state, hover, focus, or label issue.
 
-## 7. Business UX
+## 8. Trust, Accessibility, and Business UX
 
 Check:
 
@@ -166,6 +194,9 @@ Check:
 - Page title, data state, filters, key metrics, and actions match the intended scene.
 - AI suggestions, risk prompts, and automation outputs include reason, evidence, source, or confidence when they influence decisions.
 - Audit trail, history, or approval records exist when trust/compliance matters.
+- Keyboard focus is visible, ordered, and not trapped or hidden behind overlays.
+- Status and risk are not communicated by color alone.
+- Errors are identified near the source and provide recovery guidance.
 
 Escalate:
 
